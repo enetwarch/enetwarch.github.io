@@ -1,0 +1,262 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --color-background: #0f1317;
+  --color-surface: #1a1f25;
+  --color-subsurface: #262c35;
+  --color-foreground: #ffffff;
+  --color-subforeground: #ffffff80;
+  --color-primary: #3e8ff4;
+  --color-secondary: #78b8fe;
+  --color-overlay: #00000080;
+  --max-width: 900px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  gap: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style-type: none;
+}
+
+.header {
+  width: 100%;
+  background-color: var(--color-surface);
+  color: var(--color-foreground);
+  padding: 1rem 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__content {
+  max-width: var(--max-width);
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.header__brand {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__icon {
+  color: var(--color-foreground);
+  font-size: 24px;
+}
+
+.header__heading {
+  font-size: 20px;
+  color: var(--color-foreground);
+  font-weight: bold;
+}
+
+.header__nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__list {
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  display: flex;
+}
+
+.header__link {
+  font-size: 16px;
+  color: var(--color-foreground);
+}
+
+.main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+}
+
+.hero,
+.work {
+  display: flex;
+  justify-content: center;
+  padding: 4rem;
+}
+
+.hero__content,
+.work__content {
+  max-width: var(--max-width);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero__figure,
+.work__figure {
+  aspect-ratio: 1 / 1;
+  background-color: var(--color-surface);
+  border-radius: 100%;
+  padding: 1rem;
+  height: 180px;
+  width: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero__icon,
+.work__icon {
+  font-size: 96px;
+  color: var(--color-foreground);
+}
+
+.hero__text,
+.work__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.hero__heading,
+.work__heading {
+  background-image: linear-gradient(to right, var(--color-primary) 0%, var(--color-secondary) 100%);
+  background-clip: text;
+  color: transparent;
+  font-size: 32px;
+  text-align: center;
+}
+
+.hero__description,
+.work__description {
+  font-size: 16px;
+  color: var(--color-foreground);
+  text-align: center;
+}
+
+.hero__button-group,
+.work__button-group {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.hero__button,
+.work__button {
+  display: flex;
+  align-items: center;
+  border: none;
+  justify-content: center;
+  background-color: var(--color-foreground);
+  color: var(--color-surface);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+}
+
+.hero__button:hover,
+.work__button:hover {
+  cursor: pointer;
+}
+
+.footer {
+  width: 100%;
+  background-color: var(--color-surface);
+  color: var(--color-foreground);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.footer__content {
+  width: 100%;
+  max-width: var(--max-width);
+  display: flex;
+  justify-content: center;
+}
+
+.footer__list {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.footer__icon {
+  font-size: 32px;
+  color: var(--color-foreground);
+}
+
+@media only screen and (min-width: 640px) {
+  .hero,
+  .work {
+    display: flex;
+    justify-content: center;
+    padding: 4rem;
+  }
+
+  .hero__content {
+    flex-direction: row-reverse;
+  }
+
+  .work__content {
+    flex-direction: row;
+  }
+
+  .hero__figure,
+  .work__figure {
+    aspect-ratio: 1 / 1;
+    background-color: var(--color-surface);
+    border-radius: 9999px;
+    padding: 1rem;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero__heading,
+  .hero__description {
+    text-align: right;
+  }
+
+  .work__heading,
+  .work__description {
+    text-align: left;
+  }
+
+  .hero__button-group {
+    justify-content: flex-end;
+  }
+
+  .work__button-group {
+    justify-content: flex-start;
+  }
+}
