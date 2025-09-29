@@ -102,14 +102,18 @@ li {
 
 .hero,
 .work,
-.tech-stack {
+.tech-stack,
+.projects,
+.blog {
   display: flex;
   justify-content: center;
   padding: 4rem;
 }
 
 .hero__content,
-.work__content {
+.work__content,
+.projects__content,
+.blog__content {
   max-width: var(--max-width);
   width: 100%;
   display: flex;
@@ -120,7 +124,9 @@ li {
 }
 
 .hero__figure,
-.work__figure {
+.work__figure,
+.projects__figure,
+.blog__figure {
   aspect-ratio: 1 / 1;
   background-color: var(--color-surface);
   border-radius: 100%;
@@ -133,13 +139,17 @@ li {
 }
 
 .hero__icon,
-.work__icon {
+.work__icon,
+.projects__icon,
+.blog__icon {
   font-size: 96px;
   color: var(--color-foreground);
 }
 
 .hero__text,
-.work__text {
+.work__text,
+.projects__text,
+.blog__text {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -148,7 +158,9 @@ li {
 
 .hero__heading,
 .work__heading,
-.tech-stack__heading {
+.tech-stack__heading,
+.projects__heading,
+.blog__heading {
   background-image: linear-gradient(to right, var(--color-primary) 0%, var(--color-secondary) 100%);
   background-clip: text;
   color: transparent;
@@ -157,21 +169,27 @@ li {
 }
 
 .hero__description,
-.work__description {
+.work__description,
+.projects__description,
+.blog__description {
   font-size: 16px;
   color: var(--color-foreground);
   text-align: center;
 }
 
 .hero__button-group,
-.work__button-group {
+.work__button-group,
+.projects__button-group,
+.blog__button-group {
   display: flex;
   justify-content: center;
   gap: 1rem;
 }
 
 .hero__button,
-.work__button {
+.work__button,
+.projects__button,
+.blog__button {
   display: flex;
   align-items: center;
   border: none;
@@ -184,7 +202,9 @@ li {
 }
 
 .hero__button:hover,
-.work__button:hover {
+.work__button:hover,
+.projects__button:hover,
+.blog__button:hover {
   cursor: pointer;
 }
 
@@ -247,16 +267,20 @@ li {
 }
 
 @media only screen and (min-width: 640px) {
-  .hero__content {
+  .hero__content,
+  .projects__content {
     flex-direction: row-reverse;
   }
 
-  .work__content {
+  .work__content,
+  .blog__content {
     flex-direction: row;
   }
 
   .hero__figure,
-  .work__figure {
+  .work__figure,
+  .projects__figure,
+  .blog__figure {
     aspect-ratio: 1 / 1;
     background-color: var(--color-surface);
     border-radius: 9999px;
@@ -268,20 +292,26 @@ li {
   }
 
   .hero__heading,
-  .hero__description {
+  .hero__description,
+  .projects__heading,
+  .projects__description {
     text-align: right;
   }
 
   .work__heading,
-  .work__description {
+  .work__description,
+  .blog__heading,
+  .blog__description {
     text-align: left;
   }
 
-  .hero__button-group {
+  .hero__button-group,
+  .projects__button-group {
     justify-content: flex-end;
   }
 
-  .work__button-group {
+  .work__button-group,
+  .blog__button-group {
     justify-content: flex-start;
   }
 }
