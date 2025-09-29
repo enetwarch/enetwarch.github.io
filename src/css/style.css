@@ -41,7 +41,7 @@ li {
   width: 100%;
   background-color: var(--color-surface);
   color: var(--color-foreground);
-  padding: 1rem 4rem;
+  padding: 1rem 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -68,15 +68,13 @@ li {
 }
 
 .header__heading {
-  font-size: 20px;
+  font-size: 24px;
   color: var(--color-foreground);
   font-weight: bold;
 }
 
 .header__nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: none;
 }
 
 .header__list {
@@ -98,6 +96,7 @@ li {
   align-items: center;
   background-color: var(--color-background);
   color: var(--color-foreground);
+  padding-block: 1rem;
 }
 
 .hero,
@@ -107,7 +106,7 @@ li {
 .blog {
   display: flex;
   justify-content: center;
-  padding: 4rem;
+  padding: 2rem;
 }
 
 .hero__content,
@@ -118,7 +117,7 @@ li {
   width: 100%;
   display: flex;
   justify-content: center;
-  gap: 4rem;
+  gap: 2rem;
   flex-direction: column;
   align-items: center;
 }
@@ -153,7 +152,7 @@ li {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .hero__heading,
@@ -183,6 +182,7 @@ li {
 .blog__button-group {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 1rem;
 }
 
@@ -199,6 +199,7 @@ li {
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   font-weight: bold;
+  font-size: 16px;
 }
 
 .hero__button:hover,
@@ -267,6 +268,42 @@ li {
 }
 
 @media only screen and (min-width: 640px) {
+  .header {
+    padding: 1.5rem 3rem;
+  }
+
+  .main {
+    padding-block: 1.5rem;
+  }
+
+  .hero,
+  .work,
+  .tech-stack,
+  .projects,
+  .blog {
+    padding: 3rem;
+  }
+
+  .hero__content,
+  .work__content,
+  .projects__content,
+  .blog__content {
+    gap: 3rem;
+  }
+
+  .hero__text,
+  .work__text,
+  .projects__text,
+  .blog__text {
+    gap: 1.5rem;
+  }
+
+  .header__nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   .hero__content,
   .projects__content {
     flex-direction: row-reverse;
@@ -313,5 +350,37 @@ li {
   .work__button-group,
   .blog__button-group {
     justify-content: flex-start;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .header {
+    padding: 2rem 4rem;
+  }
+
+  .main {
+    padding-block: 2rem;
+  }
+
+  .hero,
+  .work,
+  .tech-stack,
+  .projects,
+  .blog {
+    padding: 4rem;
+  }
+
+  .hero__content,
+  .work__content,
+  .projects__content,
+  .blog__content {
+    gap: 4rem;
+  }
+
+  .hero__text,
+  .work__text,
+  .projects__text,
+  .blog__text {
+    gap: 2rem;
   }
 }
