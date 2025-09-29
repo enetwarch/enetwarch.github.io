@@ -1,4 +1,4 @@
-import stack from "./stack.json" with { type: "json" };
+import stack from "../data/stack.json" with { type: "json" };
 
 window.addEventListener("DOMContentLoaded", () => {
   const techStackList = document.getElementById("tech-stack-list");
