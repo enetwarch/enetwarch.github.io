@@ -10,4 +10,11 @@ window.addEventListener("DOMContentLoaded", () => {
     tech.querySelector(".tech-stack__label").innerText = label;
     techStackList.appendChild(tech);
   }
+
+  const blogPostList = document.getElementById("blog-posts-list");
+  const blogPostTemplate = document.getElementById("blog-posts-template");
+
+  for (let _ = 0; _ < 9; _++) {
+    blogPostList.appendChild(blogPostTemplate.content.cloneNode(true));
+  }
 });

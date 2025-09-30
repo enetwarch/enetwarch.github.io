@@ -7,11 +7,11 @@
     <title>Enetwarch's Portfolio</title>
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-    <link rel="icon" type="image/svg+xml" href="./img/favicon.svg">
-    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon-16x16.png">
-    <link rel="icon" sizes="180x180" href="./img/apple-touch-icon.png">
-    <link rel="shortcut icon" href="./img/favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="./img/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon-16x16.png" />
+    <link rel="icon" sizes="180x180" href="./img/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="./img/favicon.ico" />
     <script src="https://kit.fontawesome.com/0541e3b46f.js" crossorigin="anonymous"></script>
     <script src="./js/home-page.js" type="module" defer></script>
   </head>
@@ -131,6 +131,24 @@
               <button class="blog__button">Subscribe</button>
             </div>
           </div>
+        </div>
+      </section>
+      <section id="blog-posts" class="blog-posts">
+        <div class="blog-posts__content">
+          <h2 id="blog-posts-label" class="blog-posts__heading">Posts</h2>
+          <ul id="blog-posts-list" class="blog-posts__list">
+            <template id="blog-posts-template">
+              <li class="blog-posts__list-item">
+                <article class="blog-posts__post">
+                  <h3 class="blog-posts__post-header">Blog Title</h3>
+                  <p class="blog-posts__post-description">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
+                  </p>
+                </article>
+              </li>
+            </template>
+          </ul>
         </div>
       </section>
     </main>
