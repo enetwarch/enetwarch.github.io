@@ -63,3 +63,13 @@ export function linkDialog(dialogId, openButtonId, showClass = "dialog--show") {
     dialogLink.addEventListener("click", closeModal);
   }
 }
+
+export function insertDateElement(beforeElementQuery, unformattedDate) {
+  const dateElement = document.createElement("p");
+  dateElement.ariaLabel = "Date Published";
+
+  const format = { year: "numeric", month: "long", day: "numeric" };
+  dateElement.innerText = new Date(unformattedDate).toLocaleDateString("en-US", format);
+
+  document.querySelector(beforeElementQuery).after(dateElement);
+}

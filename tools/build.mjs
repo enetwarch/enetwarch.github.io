@@ -35,6 +35,7 @@ fs.readdirSync(directory.blog).forEach((blob) => {
 
       const innerHtml = template
         .replace(/{{title}}/g, `Enetwarch's Blog | ${title}`)
+        .replace(/{{date}}/g, date)
         .replace(/{{description}}/g, description)
         .replace(/{{content}}/g, content);
 

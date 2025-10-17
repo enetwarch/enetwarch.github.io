@@ -49,7 +49,7 @@ export function addStarfieldCanvas(starfieldCanvasId, numberOfStars) {
     const xRatio = newWidth / width;
     const yRatio = newHeight / height;
 
-    stars.forEach(star => {
+    stars.forEach((star) => {
       star.xCoordinates *= xRatio;
       star.yCoordinates *= yRatio;
     });
