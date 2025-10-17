@@ -1,8 +1,20 @@
 [
   {
+    "title": "Navigating AI for developers",
+    "date": null,
+    "description": "<img src=\"https://cdn.prod.website-files.com/5e0f1144930a8bc8aace526c/67cfbcbefdd9f06b9a428994_67cf8...",
+    "href": "./navigating-ai-for-developers"
+  },
+  {
+    "title": "Programming Jargon Decoder Simplified",
+    "date": null,
+    "description": "Struggling with programming terms? Use our Jargon Decoder to understand complex concepts like API or...",
+    "href": "./programming-jargon-decoder-simplified"
+  },
+  {
     "title": "React SSR with Next.js: Step-by-Step",
     "date": null,
-    "description": "Feb 5, 2025... <img src=\"https://cdn.prod.website-files.com/5e0f1144930a8bc8aace526c/67a31f37b0514c5...",
-    "href": "./dev"
+    "description": "<img src=\"https://cdn.prod.website-files.com/5e0f1144930a8bc8aace526c/67a31f37b0514c5d51481a4d_67a2f...",
+    "href": "./react-srr-with-nextjs"
   }
 ]
