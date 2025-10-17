@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Enetwarch's Portfolio</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <link rel="icon" type="image/svg+xml" href="./img/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon-16x16.png" />
+    <link rel="icon" sizes="180x180" href="./img/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="./img/favicon.ico" />
+    <script src="https://kit.fontawesome.com/0541e3b46f.js" crossorigin="anonymous"></script>
+    <script src="./js/index.js" type="module" defer></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__content">
+        <a class="header__brand">
+          <i class="header__icon header__icon--logo fa-solid fa-user" aria-hidden="true"></i>
+          <h1 class="header__heading">Enetwarch</h1>
+        </a>
+        <nav class="header__nav">
+          <ul class="header__list">
+            <li class="header__list-item">
+              <a class="header__link" href="#hero">About</a>
+            </li>
+            <li class="header__list-item">
+              <a class="header__link" href="#projects">Projects</a>
+            </li>
+            <li class="header__list-item">
+              <a class="header__link" href="#blog-posts">Blog</a>
+            </li>
+          </ul>
+        </nav>
+        <button id="hamburger-button" class="header__hamburger">
+          <i class="header__icon fa-solid fa-bars" aria-hidden="true"></i>
+        </button>
+      </div>
+    </header>
+    <main id="main" class="main">
+      <section id="hero" class="hero" aria-labelledby="hero-label">
+        <div class="hero__content">
+          <figure class="hero__figure">
+            <i class="hero__icon fa-solid fa-user" aria-hidden="true"></i>
+          </figure>
+          <div class="hero__information">
+            <div class="hero__text">
+              <h2 id="hero-label" class="hero__heading">Enetwarch</h2>
+              <p class="hero__description">
+                Hello there! I am <b>Hugo Molina</b>, an aspiring full-stack software developer. I have a passion for
+                problem solving, programming, and delivering clean, efficient code.
+              </p>
+            </div>
+            <div class="hero__button-group">
+              <a
+                class="hero__button"
+                href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                target="_blank"
+                rel="noreferrer"
+                >Resume</a
+              >
+              <button id="subscribe-button1" class="hero__button">Subscribe</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="work" class="work" aria-labelledby="work-label">
+        <div class="work__content">
+          <figure class="work__figure">
+            <i class="work__icon fa-solid fa-briefcase" aria-hidden="true"></i>
+          </figure>
+          <div class="work__information">
+            <div class="work__text">
+              <h2 id="work-label" class="work__heading">Work</h2>
+              <p class="work__description">
+                The things I can work on range from implementing the front-end for web designs to constructing secure,
+                full-fledged back-end systems under web development.
+              </p>
+            </div>
+            <div class="work__button-group">
+              <a class="work__button" href="https://www.linkedin.com/in/yugomolina/" target="_blank" rel="noreferrer"
+                >LinkedIn</a
+              >
+              <a class="work__button" href="https://github.com/enetwarch" target="_blank" rel="noreferrer">GitHub</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="tech-stack" class="tech-stack">
+        <div class="tech-stack__content">
+          <h2 id="tech-stack-label" class="tech-stack__heading">Tech Stack</h2>
+          <ul id="tech-stack-list" class="tech-stack__list">
+            <template id="tech-stack-template">
+              <li class="tech-stack__list-item">
+                <figure class="tech-stack__technology">
+                  <i class="tech-stack__icon" aria-hidden="true"></i>
+                  <figcaption class="tech-stack__label"></figcaption>
+                </figure>
+              </li>
+            </template>
+          </ul>
+        </div>
+      </section>
+      <section id="projects" class="projects" aria-labelledby="projects-label">
+        <div class="projects__content">
+          <figure class="projects__figure">
+            <i class="projects__icon fa-solid fa-code" aria-hidden="true"></i>
+          </figure>
+          <div class="projects__information">
+            <div class="projects__text">
+              <h2 id="projects-label" class="projects__heading">Projects</h2>
+              <p class="projects__description">
+                I enjoy building modern web applications that balance performance, usability, and clean design. Most of
+                my work revolves around Next.js, React, and TypeScript, giving me the flexibility to create both
+                responsive front-end experiences and scalable back-end solutions.
+              </p>
+            </div>
+            <div class="projects__button-group">
+              <a
+                class="projects__button"
+                href="https://github.com/enetwarch?tab=repositories"
+                target="_blank"
+                rel="noreferrer"
+                >Repositories</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="blog" class="blog" aria-labelledby="blog-label">
+        <div class="blog__content">
+          <figure class="blog__figure">
+            <i class="blog__icon fa-solid fa-book" aria-hidden="true"></i>
+          </figure>
+          <div class="blog__information">
+            <div class="blog__text">
+              <h2 id="blog-label" class="blog__heading">Blog</h2>
+              <p class="blog__description">
+                I use this space to document my experiences in coding and web development. From solving technical
+                challenges to reflecting on projects I've worked on, these posts serve as both a personal log and a way
+                to share what I've learned along the way.
+              </p>
+            </div>
+            <div class="blog__button-group">
+              <button id="subscribe-button2" class="blog__button">Subscribe</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="blog-posts" class="blog-posts">
+        <div class="blog-posts__content">
+          <h2 id="blog-posts-label" class="blog-posts__heading">Posts</h2>
+          <ul id="blog-posts-list" class="blog-posts__list">
+            <template id="blog-posts-template">
+              <li class="blog-posts__list-item">
+                <article class="blog-posts__post">
+                  <h3 class="blog-posts__post-header">Blog Title</h3>
+                  <p class="blog-posts__post-description">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
+                  </p>
+                </article>
+              </li>
+            </template>
+          </ul>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footer__content">
+        <ul class="footer__list">
+          <li class="footer__list-item">
+            <a class="footer__link" href="https://www.linkedin.com/in/yugomolina/" target="_blank" rel="noreferrer">
+              <i class="footer__icon fa-brands fa-linkedin" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li class="footer__list-item">
+            <a class="footer__link" href="https://github.com/enetwarch" target="_blank" rel="noreferrer">
+              <i class="footer__icon fa-brands fa-github" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li class="footer__list-item">
+            <a class="footer__link" href="mailto:enetwarch@protonmail.com">
+              <i class="footer__icon fa-solid fa-envelope" aria-hidden="true"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+    <dialog id="hamburger-dialog" class="dialog">
+      <nav class="dialog__nav">
+        <ul class="dialog__list">
+          <li class="dialog__list-item">
+            <a class="dialog__link" href="#hero">About</a>
+          </li>
+          <li class="dialog__list-item">
+            <a class="dialog__link" href="#projects">Projects</a>
+          </li>
+          <li class="dialog__list-item">
+            <a class="dialog__link" href="#blog-posts">Blog</a>
+          </li>
+        </ul>
+      </nav>
+    </dialog>
+    <dialog id="subscribe-dialog" class="dialog dialog--full">
+      <button class="dialog__close-button">
+        <i class="dialog__icon dialog__icon--close fa-solid fa-xmark" aria-hidden="true"></i>
+      </button>
+      <form id="subscribe-form" class="dialog__form" aria-labelledby="subscribe-heading">
+        <header class="dialog__header">
+          <h2 id="subscribe-heading" class="dialog__heading">Newsletter</h2>
+          <p class="dialog__description">Subscribe to my newsletter to get emails on my latest blog posts!</p>
+        </header>
+        <div class="dialog__form-field-group">
+          <div class="dialog__form-field">
+            <label class="dialog__form-label" for="email">Email Address</label>
+            <div class="dialog__input-container">
+              <i class="dialog__input-icon fa-solid fa-envelope" aria-hidden="true"></i>
+              <input
+                id="email"
+                class="dialog__input"
+                type="email"
+                placeholder="johndoe@gmail.com"
+                autocomplete="name"
+                required
+              />
+            </div>
+          </div>
+          <div class="dialog__form-field">
+            <label class="dialog__form-label" for="name">Name (Optional)</label>
+            <div class="dialog__input-container">
+              <i class="dialog__input-icon fa-solid fa-user" aria-hidden="true"></i>
+              <input id="name" class="dialog__input" type="text" placeholder="John Doe" autocomplete="email" />
+            </div>
+          </div>
+        </div>
+        <footer class="dialog__button-group">
+          <button class="dialog__cancel-button">Cancel</button>
+          <button class="dialog__confirm-button">Subscribe</button>
+        </footer>
+      </form>
+    </dialog>
+  </body>
+</html>
