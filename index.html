@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Hugo Molina" />
+    <meta name="description" content="Turning complex problems into clean, efficient solutions." />
     <title>Enetwarch's Portfolio</title>
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
@@ -40,7 +42,7 @@
         </button>
       </div>
     </header>
-    <main id="main">
+    <main id="main" class="main">
       <section id="hero" class="hero" aria-labelledby="hero-label">
         <div class="hero__content">
           <figure class="hero__figure">
@@ -152,17 +154,19 @@
       </section>
       <section id="blog-posts" class="blog-posts">
         <div class="blog-posts__content">
-          <h2 id="blog-posts-label" class="blog-posts__heading">Posts</h2>
+          <h2 id="blog-posts-label" class="blog-posts__heading">Featured Posts</h2>
           <ul id="blog-posts-list" class="blog-posts__list">
             <template id="blog-posts-template">
               <li class="blog-posts__list-item">
-                <article class="blog-posts__post">
-                  <h3 class="blog-posts__post-header">Blog Title</h3>
-                  <p class="blog-posts__post-description">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
-                  </p>
-                </article>
+                <a class="blog-posts__link">
+                  <article class="blog-posts__post">
+                    <h3 class="blog-posts__post-header">Blog Title</h3>
+                    <p class="blog-posts__post-description">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                      labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
+                    </p>
+                  </article>
+                </a>
               </li>
             </template>
           </ul>
