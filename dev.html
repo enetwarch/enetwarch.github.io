@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Enetwarch Blog | React SSR with Next.js: Step-by-Step</title>
+    <link rel="stylesheet" href="./css/blog.css" />
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+    <link rel="icon" type="image/svg+xml" href="./img/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon-16x16.png" />
+    <link rel="icon" sizes="180x180" href="./img/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="./img/favicon.ico" />
+    <script src="https://kit.fontawesome.com/0541e3b46f.js" crossorigin="anonymous"></script>
+    <script src="./js/blog.js" type="module" defer></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__content">
+        <a class="header__brand">
+          <i class="header__icon header__icon--logo fa-solid fa-user" aria-hidden="true"></i>
+          <h1 class="header__heading">Enetwarch</h1>
+        </a>
+        <nav class="header__nav">
+          <ul class="header__list">
+            <li class="header__list-item">
+              <a class="header__link" href="./#hero">About</a>
+            </li>
+            <li class="header__list-item">
+              <a class="header__link" href="./#projects">Projects</a>
+            </li>
+            <li class="header__list-item">
+              <a class="header__link" href="./#blog-posts">Blog</a>
+            </li>
+          </ul>
+        </nav>
+        <button id="hamburger-button" class="header__hamburger">
+          <i class="header__icon fa-solid fa-bars" aria-hidden="true"></i>
+        </button>
+      </div>
+    </header>
+    <main class="main">
+      <article class="article" aria-label="Enetwarch Blog | React SSR with Next.js: Step-by-Step">
+        <h1>React SSR with Next.js: Step-by-Step</h1>
+        <p>Feb 5, 2025</p>
+        <p>
+          <img
+            src="https://cdn.prod.website-files.com/5e0f1144930a8bc8aace526c/67a31f37b0514c5d51481a4d_67a2f10a17af441bd9b67648-1738741827093.jpg"
+            alt="React SSR with Next.js: Step-by-Step"
+          />
+        </p>
+        <p>
+          Learn how to implement server-side rendering with Next.js to enhance performance, SEO, and user experience in
+          your React applications.
+        </p>
+        <p>
+          <strong>Here’s why SSR with <a href="https://nextjs.org/">Next.js</a> matters:</strong>
+        </p>
+        <ul>
+          <li><strong>Speed:</strong> Pages load faster because the server sends fully-rendered HTML.</li>
+          <li><strong>SEO:</strong> Search engines can easily index your content.</li>
+          <li><strong>Dynamic Data:</strong> Fetch real-time data using <code>getServerSideProps</code>.</li>
+        </ul>
+        <p><strong>How to get started:</strong></p>
+        <ol>
+          <li>Install Next.js with <code>npx create-next-app@latest</code>.</li>
+          <li>Use <code>getServerSideProps</code> for server-side data fetching.</li>
+          <li>Set up dynamic routes for personalized content.</li>
+          <li>Optimize performance with caching, code splitting, and monitoring.</li>
+        </ol>
+        <p>
+          <strong>Hosting options:</strong> Deploy on <a href="https://vercel.com/">Vercel</a> for simplicity or
+          <a href="https://aws.amazon.com/">AWS</a> for more control.
+        </p>
+        <p>
+          Next.js simplifies SSR, making it easier to build high-performance, SEO-friendly
+          <a href="https://opensource.fb.com/projects/react/">React</a> apps. Ready to dive in? Let’s go step-by-step.
+        </p>
+        <h2>Learn SSR for <a href="https://nextjs.org/">Next.js</a> in 10 Minutes</h2>
+        <p>
+          <img
+            src="https://cdn.prod.website-files.com/5e0f1144930a8bc8aace526c/67a31f39b0514c5d51481c42_nextjs.org-ea65458e6d1aa258299583911014462e-2025-02-05.jpeg"
+            alt="Next.js"
+          />
+        </p>
+        <h2>Project Setup</h2>
+        <p>
+          Setting up a
+          <a href="https://daily.dev/blog/next-js-graphql-integration-basics#installing-dependencies"
+            >Next.js project</a
+          >
+          for <a href="https://daily.dev/blog/server-side-rendering-renaissance">server-side rendering</a> (SSR) is
+          straightforward and doesn&#39;t require complicated configuration.
+        </p>
+        <h3>Install Next.js</h3>
+        <p>
+          To create a new Next.js project with SSR support, use the official project creation tool. Open your terminal
+          and run:
+        </p>
+        <pre><code>npx create-next-app@latest
+</code></pre>
+        <p>
+          This command initializes a new Next.js project with all the essential files and configurations for SSR. It
+          automatically installs the required dependencies and sets up a basic project structure optimized for SSR
+          <a href="https://nextjs.org/docs/app/getting-started/installation">[3]</a>.
+        </p>
+        <h3>Next.js File Structure</h3>
+        <p>Below is the key directory layout for SSR applications:</p>
+        <pre><code>your-project/
+├── app/
+│   ├── layout.tsx    # Root layout with HTML/body tags
+│   └── page.tsx      # Home page component
+├── public/           # Static assets
+└── next.config.js    # Optional configuration
+</code></pre>
+        <p>
+          The <code>app</code> directory is central to your SSR application. The <code>layout.tsx</code> file defines
+          the root structure (HTML and body tags), while <code>page.tsx</code> serves as the home page, both using SSR
+          by default.
+        </p>
+        <p>
+          Use the <code>public</code> directory for static assets like images and fonts. The
+          <code>next.config.js</code> file, though optional, allows for advanced configuration
+          <a href="https://nextjs.org/docs/app/api-reference/config/next-config-js">[4]</a>.
+        </p>
+        <p>
+          With this setup, your project is ready to take advantage of Next.js&#39;s server-side rendering features. From
+          here, you can start building SSR pages and explore Next.js&#39;s data-fetching options.
+        </p>
+        <h2>SSR Implementation</h2>
+        <p>
+          Server-side rendering (SSR) in Next.js requires precise setup to deliver both high performance and
+          functionality. Here&#39;s how you can create SSR pages and manage data efficiently.
+        </p>
+        <h3>Building SSR Pages</h3>
+        <p>
+          Next.js simplifies SSR with built-in server rendering capabilities. It automatically breaks content into
+          smaller pieces, improving both speed and user experience
+          <a href="https://nextjs.org/docs/app/building-your-application/rendering/server-components">[1]</a>.
+        </p>
+        <p>To set up a basic SSR page, start by creating a file in your <code>pages</code> directory:</p>
+        <pre><code>// pages/products.tsx
+const ProductsPage = ({ products }) =&gt; {
+  return (
+    &lt;div className=&quot;products-container&quot;&gt;
+      {products.map((product) =&gt; (
+        &lt;div key={product.id}&gt;
+          &lt;h2&gt;{product.name}&lt;/h2&gt;
+          &lt;p&gt;{product.description}&lt;/p&gt;
+        &lt;/div&gt;
+      ))}
+    &lt;/div&gt;
+  );
+};
+
+export default ProductsPage;
+</code></pre>
+        <p>To fetch data for this page, Next.js uses <code>getServerSideProps</code>.</p>
+        <h3>Fetching Data with getServerSideProps</h3>
+        <p>
+          <code>getServerSideProps</code> runs every time a page is requested, making it perfect for fetching dynamic
+          data
+          <a href="https://blog.appsignal.com/2023/12/13/server-side-rendering-with-nextjs-react-and-typescript.html"
+            >[2]</a
+          >.
+        </p>
+        <p>Here’s an example that includes error handling:</p>
+        <pre><code>export async function getServerSideProps() {
+  try {
+    const response = await fetch(&#39;https://api.example.com/products&#39;);
+    if (!response.ok) {
+      throw new Error(&#39;Failed to fetch products&#39;);
+    }
+    const products = await response.json();
+
+    return {
+      props: {
+        products,
+        lastUpdated: new Date().toISOString(),
+      }
+    };
+  } catch (error) {
+    return {
+      props: {
+        products: [],
+        error: error.message
+      }
+    };
+  }
+}
+</code></pre>
+        <p>To improve performance, you can also add caching headers:</p>
+        <pre><code>export async function getServerSideProps({ res }) {
+  res.setHeader(
+    &#39;Cache-Control&#39;,
+    &#39;public, s-maxage=10, stale-while-revalidate=59&#39;
+  );
+  // ...data fetching logic
+}
+</code></pre>
+        <h3>Dynamic Routes with SSR</h3>
+        <p>
+          Dynamic routes let you handle variable parameters, such as product IDs or user profiles, by using square
+          brackets in the file name.
+        </p>
+        <pre><code>// pages/products/[id].tsx
+const ProductDetail = ({ product }) =&gt; {
+  return (
+    &lt;div&gt;
+      &lt;h1&gt;{product.name}&lt;/h1&gt;
+      &lt;div className=&quot;product-details&quot;&gt;
+        &lt;p&gt;{product.description}&lt;/p&gt;
+        &lt;span&gt;Price: ${product.price}&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+};
+
+export async function getServerSideProps({ params }) {
+  const { id } = params;
+  const response = await fetch(`https://api.example.com/products/${id}`);
+  const product = await response.json();
+
+  return {
+    props: {
+      product,
+    },
+    notFound: !product, // Returns a 404 if the product doesn&#39;t exist
+  };
+}
+
+export default ProductDetail;
+</code></pre>
+        <p>
+          Since SSR can increase server load, adding caching and closely monitoring performance metrics is crucial for
+          maintaining a smooth experience. With dynamic routing set up,
+          <a href="https://daily.dev/blog/performance-boosting-tips-for-developers">performance optimization</a> becomes
+          the next focus.
+        </p>
+        <h2>Performance Tuning</h2>
+        <p>
+          Improving the performance of
+          <a href="https://app.daily.dev/posts/HXmtLfcG2">Next.js SSR applications</a> involves smart caching
+          strategies, efficient code management, and optimizing server resources. Here&#39;s how you can make your
+          application faster and more efficient.
+        </p>
+        <h3>Caching Strategies</h3>
+        <p>
+          Using a layered caching approach can significantly improve performance. Next.js supports caching through
+          <code>getServerSideProps</code>, allowing you to control how content is stored and served:
+        </p>
+        <pre><code>export async function getServerSideProps({ req, res }) {
+  res.setHeader(
+    &#39;Cache-Control&#39;,
+    &#39;public, s-maxage=30, stale-while-revalidate=300&#39;
+  );
+
+  const data = await fetch(&#39;https://api.example.com/data&#39;);
+  return {
+    props: { data }
+  };
+}
+</code></pre>
+        <p>
+          Caching helps reduce server load, but combining it with better code-loading techniques can yield even better
+          results.
+        </p>
+        <h3>Code Splitting and Loading</h3>
+        <p>
+          Reducing the initial bundle size is key to faster page loads. Next.js supports dynamic imports, which allow
+          you to load components only when needed:
+        </p>
+        <pre><code>const DynamicChart = dynamic(() =&gt; import(&#39;../components/Chart&#39;), {
+  loading: () =&gt; &lt;p&gt;Loading chart...&lt;/p&gt;,
+  ssr: false
+});
+</code></pre>
+        <p>This approach ensures that heavier components, like charts or maps, don’t slow down the initial load.</p>
+        <h3>Optimizing Server Resources</h3>
+        <p>Efficient server usage is vital, especially for handling high traffic. Here are two practical methods:</p>
+        <p>
+          <strong>Selective Hydration</strong>: Focus on adding interactivity only where it&#39;s needed. For example:
+        </p>
+        <pre><code>  &#39;use client&#39;;
+
+  const InteractiveComponent = ({ children }) =&gt; {
+    return children;
+  };
+</code></pre>
+        <p>
+          <strong>Monitoring and Resource Management</strong>: Use Next.js metrics to track server performance and act
+          when thresholds are exceeded:
+        </p>
+        <h2>Deploy SSR Apps</h2>
+        <p>
+          Deploying Next.js SSR applications involves thorough preparation and selecting the right hosting platform to
+          achieve the best performance.
+        </p>
+        <h3>Pre-deployment Steps</h3>
+        <p>To create a production build, run the following commands:</p>
+        <pre><code>npm run build
+npm run start
+</code></pre>
+        <h3>Hosting Options</h3>
+        <p>
+          Once your app is ready, choose a hosting platform that fits your SSR needs. <strong>Vercel</strong>, the team
+          behind Next.js, offers an easy-to-use platform tailored for SSR deployments. Their features include automatic
+          SSL certificates and serverless architecture.
+        </p>
+        <p>
+          If you need more control over infrastructure, <strong>AWS</strong> is a great alternative. Here&#39;s an
+          example of a basic AWS Lambda configuration:
+        </p>
+        <pre><code>const server = require(&#39;next&#39;)({
+  dev: false,
+  conf: {
+    compress: true,
+    distDir: &#39;.next&#39;
+  }
+});
+</code></pre>
+        <h3>Track and Scale</h3>
+        <p>
+          To handle traffic spikes, use tools like <strong>AWS Auto Scaling</strong>. Set up alerts to respond to issues
+          quickly and maintain a seamless user experience. Balancing server resources with user demand is key to
+          leveraging the benefits of server-side rendering effectively.
+        </p>
+        <h2>Wrap-up</h2>
+        <h3>Main Points</h3>
+        <p>
+          Next.js has revolutionized how server-side rendering (SSR) is implemented, allowing developers to create
+          faster, SEO-friendly React applications. This guide has covered how Next.js&#39;s SSR architecture improves
+          application delivery and how tools like <code>getServerSideProps</code> enable efficient real-time data
+          fetching. Additionally, we discussed performance improvements through caching and code splitting, which
+          enhance the overall user experience.
+        </p>
+        <p>
+          By applying the deployment strategies and performance tips shared earlier, developers can build
+          high-performance web applications that meet the demands of modern users.
+        </p>
+        <p>
+          If you&#39;re eager to expand your knowledge, the resources below can help you dive deeper into mastering SSR
+          with Next.js.
+        </p>
+        <h3>Learning Resources</h3>
+        <p><strong>Official Documentation</strong>:</p>
+        <ul>
+          <li><strong>Next.js Documentation</strong>: Detailed guides on implementing SSR.</li>
+          <li><strong>React Server Components</strong>: Technical documentation for advanced use cases.</li>
+        </ul>
+        <p>
+          <strong>Community Resources</strong>: Platforms like <a href="https://daily.dev/">daily.dev</a> connect
+          developers with communities specializing in Next.js and SSR, keeping you updated on the latest practices and
+          techniques.
+        </p>
+      </article>
+    </main>
+    <footer class="footer">
+      <div class="footer__content">
+        <ul class="footer__list">
+          <li class="footer__list-item">
+            <a class="footer__link" href="https://www.linkedin.com/in/yugomolina/" target="_blank" rel="noreferrer">
+              <i class="footer__icon fa-brands fa-linkedin" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li class="footer__list-item">
+            <a class="footer__link" href="https://github.com/enetwarch" target="_blank" rel="noreferrer">
+              <i class="footer__icon fa-brands fa-github" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li class="footer__list-item">
+            <a class="footer__link" href="mailto:enetwarch@protonmail.com">
+              <i class="footer__icon fa-solid fa-envelope" aria-hidden="true"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+    <dialog id="hamburger-dialog" class="dialog">
+      <nav class="dialog__nav">
+        <ul class="dialog__list">
+          <li class="dialog__list-item">
+            <a class="dialog__link" href="./#hero">About</a>
+          </li>
+          <li class="dialog__list-item">
+            <a class="dialog__link" href="./#projects">Projects</a>
+          </li>
+          <li class="dialog__list-item">
+            <a class="dialog__link" href="./#blog-posts">Blog</a>
+          </li>
+        </ul>
+      </nav>
+    </dialog>
+  </body>
+</html>
