@@ -54,10 +54,20 @@
 .article a {
   color: var(--color-primary);
   text-decoration: underline;
+  box-shadow: var(--inactive-ring);
+  transition: opacity var(--transition-delay), color var(--transition-delay), box-shadow var(--transition-delay);
+}
+
+.article a:focus-visible {
+  box-shadow: var(--active-ring);
 }
 
 .article a:hover {
   color: var(--color-secondary);
+}
+
+.article a:active {
+  opacity: 0.8;
 }
 
 .article li {

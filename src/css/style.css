@@ -9,6 +9,8 @@
   --color-primary: #3e8ff4;
   --color-secondary: #78b8fe;
   --color-overlay: #00000080;
+  --inactive-ring: 0 0 0 0 var(--color-primary);
+  --active-ring: 0 0 0 4px var(--color-primary);
   --max-width: 900px;
   --transition-delay: 0.25s;
 }
@@ -25,11 +27,11 @@
 }
 
 *:focus-visible {
-  box-shadow: 0 0 0 4px var(--color-primary);
+  box-shadow: var(--active-ring);
 }
 
 *:not(:focus-visible) {
-  box-shadow: 0 0 0 0 var(--color-primary);
+  box-shadow: var(--inactive-ring)
 }
 
 body {
@@ -248,7 +250,7 @@ li {
   border-radius: 0.5rem;
   font-weight: bold;
   font-size: 16px;
-  box-shadow: 0 0 0 0 var(--color-primary);
+  box-shadow: var(--inactive-ring);
   transition: var(--transition-delay) opacity, box-shadow var(--transition-delay) ease;
 }
 
@@ -258,7 +260,7 @@ li {
 .blog__button:focus-visible,
 .dialog__close-button:focus-visible,
 .dialog__cancel-button:focus-visible {
-  box-shadow: 0 0 0 4px var(--color-primary);
+  box-shadow: var(--active-ring);
 }
 
 .hero__button:hover,
@@ -557,12 +559,12 @@ li {
   border-radius: 0.5rem;
   font-weight: bold;
   font-size: 16px;
-  box-shadow: 0 0 0 0 var(--color-primary);
+  box-shadow: var(--inactive-ring);
   transition: var(--transition-delay) opacity, box-shadow var(--transition-delay) ease;
 }
 
 .dialog__confirm-button:focus-visible {
-  box-shadow: 0 0 0 4px var(--color-primary);
+  box-shadow: var(--active-ring);
 }
 
 .dialog__confirm-button:hover {
