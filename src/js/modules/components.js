@@ -34,22 +34,32 @@ export function addBlogPosts(blogPostsListId, blogPostsTemplateId, blogs) {
   }
 }
 
-export function linkDialog(dialogId, openButtonId) {
+export function linkDialog(dialogId, openButtonId, showClass = "dialog--show") {
   const dialog = document.getElementById(dialogId);
   const openButton = document.getElementById(openButtonId);
   const closeButton = dialog.querySelector(selectors.dialogCloseButton);
   const cancelButton = dialog.querySelector(selectors.dialogCancelButton);
   const dialogLinks = dialog.querySelectorAll(selectors.dialogLink);
 
-  openButton.addEventListener("click", () => dialog.showModal());
-  closeButton?.addEventListener("click", () => dialog.close());
-  cancelButton?.addEventListener("click", () => dialog.close());
-  dialog.addEventListener("cancel", () => dialog.close());
+  const showModal = () => {
+    dialog.showModal();
+    requestAnimationFrame(() => dialog.classList.add(showClass));
+  };
+
+  const closeModal = () => {
+    dialog.classList.remove(showClass);
+    dialog.addEventListener("transitionend", () => dialog.close(), { once: true });
+  };
+
+  openButton.addEventListener("click", showModal);
+  closeButton?.addEventListener("click", closeModal);
+  cancelButton?.addEventListener("click", closeModal);
+  dialog.addEventListener("cancel", closeModal);
   dialog.addEventListener("click", (event) => {
-    if (event.target == dialog) dialog.close();
+    if (event.target == dialog) closeModal();
   });
 
   for (const dialogLink of dialogLinks) {
-    dialogLink.addEventListener("click", () => dialog.close());
+    dialogLink.addEventListener("click", closeModal);
   }
 }

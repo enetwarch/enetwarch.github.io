@@ -10,6 +10,7 @@
   --color-secondary: #78b8fe;
   --color-overlay: #00000080;
   --max-width: 900px;
+  --transition-delay: 0.25s;
 }
 
 * {
@@ -19,10 +20,16 @@
   gap: 0;
   font-family: "Poppins", sans-serif;
   border-radius: 0.25rem;
+  outline: none;
+  transition: box-shadow var(--transition-delay) ease;
 }
 
 *:focus-visible {
-  outline: 4px solid var(--color-primary);
+  box-shadow: 0 0 0 4px var(--color-primary);
+}
+
+*:not(:focus-visible) {
+  box-shadow: 0 0 0 0 var(--color-primary);
 }
 
 body {
@@ -241,6 +248,17 @@ li {
   border-radius: 0.5rem;
   font-weight: bold;
   font-size: 16px;
+  box-shadow: 0 0 0 0 var(--color-primary);
+  transition: var(--transition-delay) opacity, box-shadow var(--transition-delay) ease;
+}
+
+.hero__button:focus-visible,
+.work__button:focus-visible,
+.projects__button:focus-visible,
+.blog__button:focus-visible,
+.dialog__close-button:focus-visible,
+.dialog__cancel-button:focus-visible {
+  box-shadow: 0 0 0 4px var(--color-primary);
 }
 
 .hero__button:hover,
@@ -250,6 +268,15 @@ li {
 .dialog__close-button:hover,
 .dialog__cancel-button:hover {
   cursor: pointer;
+}
+
+.hero__button:active,
+.work__button:active,
+.projects__button:active,
+.blog__button:active,
+.dialog__close-button:active,
+.dialog__cancel-button:active {
+  opacity: 0.8;
 }
 
 .tech-stack__content,
@@ -281,6 +308,21 @@ li {
   color: var(--color-foreground);
   background-color: var(--color-surface);
   border-radius: 0.5rem;
+  transition:
+    var(--transition-delay) background-color,
+    var(--transition-delay) color,
+    var(--transition-delay) opacity;
+}
+
+.tech-stack__technology:hover {
+  color: var(--color-background);
+  background-color: var(--color-foreground);
+  cursor: pointer;
+  user-select: none;
+}
+
+.tech-stack__technology:active {
+  opacity: 0.8;
 }
 
 .blog-posts__list {
@@ -290,12 +332,28 @@ li {
   gap: 1rem;
 }
 
+.blog-posts__link {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5rem;
+}
+
 .blog-posts__post {
   background-color: var(--color-surface);
   color: var(--color-foreground);
   padding: 1rem;
   border-radius: 0.5rem;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: var(--transition-delay) opacity;
+}
+
+.blog-posts__post:active {
+  opacity: 0.8;
 }
 
 .blog-posts__header {
@@ -333,18 +391,39 @@ li {
 }
 
 .dialog {
+  opacity: 0;
+  transform: scale(0.8);
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform-origin: center;
+  translate: -50% -50%;
   border: none;
   max-width: 350px;
   z-index: 9999;
   padding: 1rem;
   background: none;
+  transition:
+    transform var(--transition-delay) ease,
+    opacity var(--transition-delay) ease;
+  pointer-events: none;
+}
+
+.dialog.dialog--show {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
 }
 
 .dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0);
+  backdrop-filter: blur(0px);
+  transition:
+    background-color var(--transition-delay) ease,
+    backdrop-filter var(--transition-delay) ease;
+}
+
+.dialog.dialog--show::backdrop {
   background-color: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(1rem);
 }
@@ -478,10 +557,20 @@ li {
   border-radius: 0.5rem;
   font-weight: bold;
   font-size: 16px;
+  box-shadow: 0 0 0 0 var(--color-primary);
+  transition: var(--transition-delay) opacity, box-shadow var(--transition-delay) ease;
+}
+
+.dialog__confirm-button:focus-visible {
+  box-shadow: 0 0 0 4px var(--color-primary);
 }
 
 .dialog__confirm-button:hover {
   cursor: pointer;
+}
+
+.dialog__confirm-button:active {
+  opacity: 0.8;
 }
 
 @media only screen and (min-width: 480px) {
