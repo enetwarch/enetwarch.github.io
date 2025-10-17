@@ -1,20 +1,20 @@
 [
   {
+    "title": "React SSR with Next.js: Step-by-Step",
+    "date": "2025-07-12",
+    "description": "Learn how to implement server-side rendering with Next.js to enhance performance, SEO, and user expe...",
+    "href": "./react-srr-with-nextjs"
+  },
+  {
     "title": "Navigating AI for developers",
-    "date": null,
-    "description": "<img src=\"https://cdn.prod.website-files.com/5e0f1144930a8bc8aace526c/67cfbcbefdd9f06b9a428994_67cf8...",
+    "date": "2025-02-24",
+    "description": "Explore how AI tools enhance coding efficiency, improve quality, and reshape development workflows f...",
     "href": "./navigating-ai-for-developers"
   },
   {
     "title": "Programming Jargon Decoder Simplified",
-    "date": null,
+    "date": "2025-02-24",
     "description": "Struggling with programming terms? Use our Jargon Decoder to understand complex concepts like API or...",
     "href": "./programming-jargon-decoder-simplified"
-  },
-  {
-    "title": "React SSR with Next.js: Step-by-Step",
-    "date": null,
-    "description": "<img src=\"https://cdn.prod.website-files.com/5e0f1144930a8bc8aace526c/67a31f37b0514c5d51481a4d_67a2f...",
-    "href": "./react-srr-with-nextjs"
   }
 ]
