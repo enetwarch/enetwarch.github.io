@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{{title}}</title>
     <link rel="stylesheet" href="./css/blog.css" />
-    <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
     <link rel="icon" type="image/svg+xml" href="./img/favicon.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon-16x16.png" />
     <link rel="icon" sizes="180x180" href="./img/apple-touch-icon.png" />
     <link rel="shortcut icon" href="./img/favicon.ico" />
     <script src="https://kit.fontawesome.com/0541e3b46f.js" crossorigin="anonymous"></script>
+    <script src="./js/blog.js" type="module" defer></script>
   </head>
   <body>
     <header class="header">
@@ -25,13 +25,13 @@
         <nav class="header__nav">
           <ul class="header__list">
             <li class="header__list-item">
-              <a class="header__link" href="#hero">About</a>
+              <a class="header__link" href="./#hero">About</a>
             </li>
             <li class="header__list-item">
-              <a class="header__link" href="#projects">Projects</a>
+              <a class="header__link" href="./#projects">Projects</a>
             </li>
             <li class="header__list-item">
-              <a class="header__link" href="#blog-posts">Blog</a>
+              <a class="header__link" href="./#blog-posts">Blog</a>
             </li>
           </ul>
         </nav>
@@ -40,7 +40,7 @@
         </button>
       </div>
     </header>
-    <main id="main" class="main">
+    <main class="main">
       <article class="article" aria-label="{{title}}">{{content}}</article>
     </main>
     <footer class="footer">
@@ -64,5 +64,20 @@
         </ul>
       </div>
     </footer>
+    <dialog id="hamburger-dialog" class="dialog">
+      <nav class="dialog__nav">
+        <ul class="dialog__list">
+          <li class="dialog__list-item">
+            <a class="dialog__link" href="./#hero">About</a>
+          </li>
+          <li class="dialog__list-item">
+            <a class="dialog__link" href="./#projects">Projects</a>
+          </li>
+          <li class="dialog__list-item">
+            <a class="dialog__link" href="./#blog-posts">Blog</a>
+          </li>
+        </ul>
+      </nav>
+    </dialog>
   </body>
 </html>
