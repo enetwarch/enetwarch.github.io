@@ -1,1 +1,8 @@
 node_modules/
+
+# HTML Blog Files
+src/*.html
+!src/index.html
+
+# JSON Blog Files
+src/data/blogs.json
