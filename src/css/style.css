@@ -50,8 +50,9 @@ li {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: fixed;
+  position: sticky;
   z-index: 5;
+  top: 0;
 }
 
 .header__content {
@@ -115,15 +116,14 @@ li {
   cursor: pointer;
 }
 
-#main {
+.main {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: var(--color-background);
   color: var(--color-foreground);
-  padding-bottom: 1rem;
-  padding-top: 6rem;
+  padding-block: 1rem;
 }
 
 .hero,
@@ -286,7 +286,7 @@ li {
 .blog-posts__list {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  grid-template-rows: repeat(auto-fill, 1fr);
+  grid-template-rows: auto;
   gap: 1rem;
 }
 
@@ -499,9 +499,8 @@ li {
     padding: 1rem 3rem;
   }
 
-  #main {
-    padding-bottom: 1.5rem;
-    padding-top: 4rem;
+  .main {
+    padding-block: 1.5rem;
   }
 
   .hero,
@@ -583,7 +582,7 @@ li {
     padding: 1rem 4rem;
   }
 
-  #main {
+  .main {
     padding-bottom: 2rem;
   }
 
