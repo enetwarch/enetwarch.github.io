@@ -1,20 +1,53 @@
 import stack from "../data/stack.json" with { type: "json" };
 
-window.addEventListener("DOMContentLoaded", () => {
-  const techStackList = document.getElementById("tech-stack-list");
-  const techStackTemplate = document.getElementById("tech-stack-template");
+const selectors = Object.freeze({
+  techStackIcon: ".tech-stack__icon",
+  techStackLabel: ".tech-stack__label",
+  dialogCloseButton: ".dialog__close-button",
+  dialogLink: ".dialog__link",
+});
 
-  for (const { iconClassList, label } of stack) {
+window.addEventListener("DOMContentLoaded", () => {
+  addTechStack("tech-stack-list", "tech-stack-template", stack);
+  addBlogPosts("blog-posts-list", "blog-posts-template");
+  linkDialog("hamburger-dialog", "hamburger-button");
+});
+
+function addTechStack(techStackListId, techStackTemplateId, stackData) {
+  const techStackList = document.getElementById(techStackListId);
+  const techStackTemplate = document.getElementById(techStackTemplateId);
+
+  for (const { iconClassList, label } of stackData) {
     const tech = techStackTemplate.content.cloneNode(true);
-    tech.querySelector(".tech-stack__icon").classList.add(...iconClassList);
-    tech.querySelector(".tech-stack__label").innerText = label;
+    tech.querySelector(selectors.techStackIcon).classList.add(...iconClassList);
+    tech.querySelector(selectors.techStackLabel).innerText = label;
     techStackList.appendChild(tech);
   }
+}
 
-  const blogPostList = document.getElementById("blog-posts-list");
-  const blogPostTemplate = document.getElementById("blog-posts-template");
+function addBlogPosts(blogPostsListId, blogPostsTemplateId) {
+  const blogPostList = document.getElementById(blogPostsListId);
+  const blogPostTemplate = document.getElementById(blogPostsTemplateId);
 
   for (let _ = 0; _ < 9; _++) {
     blogPostList.appendChild(blogPostTemplate.content.cloneNode(true));
   }
-});
+}
+
+function linkDialog(dialogId, openButtonId) {
+  const dialog = document.getElementById(dialogId);
+  const openButton = document.getElementById(openButtonId);
+  const closeButton = dialog.querySelector(selectors.dialogCloseButton);
+  const dialogLinks = dialog.querySelectorAll(selectors.dialogLink);
+
+  openButton.addEventListener("click", () => dialog.showModal());
+  closeButton?.addEventListener("click", () => dialog.close());
+  dialog.addEventListener("cancel", () => dialog.close());
+  dialog.addEventListener("click", (event) => {
+    if (event.target == dialog) dialog.close();
+  });
+
+  for (const dialogLink of dialogLinks) {
+    dialogLink.addEventListener("click", () => dialog.close());
+  }
+}

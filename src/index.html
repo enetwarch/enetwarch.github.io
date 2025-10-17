@@ -19,29 +19,32 @@
     <header class="header">
       <div class="header__content">
         <a class="header__brand">
-          <i class="header__icon fa-solid fa-user"></i>
+          <i class="header__icon header__icon--logo fa-solid fa-user" aria-hidden="true"></i>
           <h1 class="header__heading">Enetwarch</h1>
         </a>
         <nav class="header__nav">
           <ul class="header__list">
             <li class="header__list-item">
-              <a class="header__link" href="">About</a>
+              <a class="header__link" href="#hero">About</a>
             </li>
             <li class="header__list-item">
-              <a class="header__link" href="">Projects</a>
+              <a class="header__link" href="#projects">Projects</a>
             </li>
             <li class="header__list-item">
-              <a class="header__link" href="">Blog</a>
+              <a class="header__link" href="#blog-posts">Blog</a>
             </li>
           </ul>
         </nav>
+        <button id="hamburger-button" class="header__hamburger">
+          <i class="header__icon fa-solid fa-bars" aria-hidden="true"></i>
+        </button>
       </div>
     </header>
     <main id="main" class="main">
       <section id="hero" class="hero" aria-labelledby="hero-label">
         <div class="hero__content">
           <figure class="hero__figure">
-            <i class="hero__icon fa-solid fa-user"></i>
+            <i class="hero__icon fa-solid fa-user" aria-hidden="true"></i>
           </figure>
           <div class="hero__information">
             <div class="hero__text">
@@ -61,7 +64,7 @@
       <section id="work" class="work" aria-labelledby="work-label">
         <div class="work__content">
           <figure class="work__figure">
-            <i class="work__icon fa-solid fa-briefcase"></i>
+            <i class="work__icon fa-solid fa-briefcase" aria-hidden="true"></i>
           </figure>
           <div class="work__information">
             <div class="work__text">
@@ -85,7 +88,7 @@
             <template id="tech-stack-template">
               <li class="tech-stack__list-item">
                 <figure class="tech-stack__technology">
-                  <i class="tech-stack__icon"></i>
+                  <i class="tech-stack__icon" aria-hidden="true"></i>
                   <figcaption class="tech-stack__label"></figcaption>
                 </figure>
               </li>
@@ -96,7 +99,7 @@
       <section id="projects" class="projects" aria-labelledby="projects-label">
         <div class="projects__content">
           <figure class="projects__figure">
-            <i class="projects__icon fa-solid fa-code"></i>
+            <i class="projects__icon fa-solid fa-code" aria-hidden="true"></i>
           </figure>
           <div class="projects__information">
             <div class="projects__text">
@@ -116,7 +119,7 @@
       <section id="blog" class="blog" aria-labelledby="blog-label">
         <div class="blog__content">
           <figure class="blog__figure">
-            <i class="blog__icon fa-solid fa-book"></i>
+            <i class="blog__icon fa-solid fa-book" aria-hidden="true"></i>
           </figure>
           <div class="blog__information">
             <div class="blog__text">
@@ -157,21 +160,36 @@
         <ul class="footer__list">
           <li class="footer__list-item">
             <a class="footer__link" href="">
-              <i class="footer__icon fa-brands fa-linkedin"></i>
+              <i class="footer__icon fa-brands fa-linkedin" aria-hidden="true"></i>
             </a>
           </li>
           <li class="footer__list-item">
             <a class="footer__link" href="">
-              <i class="footer__icon fa-brands fa-github"></i>
+              <i class="footer__icon fa-brands fa-github" aria-hidden="true"></i>
             </a>
           </li>
           <li class="footer__list-item">
             <a class="footer__link" href="">
-              <i class="footer__icon fa-solid fa-envelope"></i>
+              <i class="footer__icon fa-solid fa-envelope" aria-hidden="true"></i>
             </a>
           </li>
         </ul>
       </div>
     </footer>
+    <dialog id="hamburger-dialog" class="dialog">
+      <nav class="dialog__nav">
+        <ul class="dialog__list">
+          <li class="dialog__list-item">
+            <a class="dialog__link" href="#hero">About</a>
+          </li>
+          <li class="dialog__list-item">
+            <a class="dialog__link" href="#projects">Projects</a>
+          </li>
+          <li class="dialog__list-item">
+            <a class="dialog__link" href="#blog-posts">Blog</a>
+          </li>
+        </ul>
+      </nav>
+    </dialog>
   </body>
 </html>
