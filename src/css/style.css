@@ -20,7 +20,7 @@
   font-family: "Poppins", sans-serif;
 }
 
-*:focus {
+*:focus-visible {
   outline: 4px solid var(--color-primary);
 }
 
@@ -199,7 +199,8 @@ li {
 .tech-stack__heading,
 .projects__heading,
 .blog__heading,
-.blog-posts__heading {
+.blog-posts__heading,
+.dialog__heading {
   background-image: linear-gradient(to right, var(--color-primary) 0%, var(--color-secondary) 100%);
   background-clip: text;
   color: transparent;
@@ -229,7 +230,8 @@ li {
 .hero__button,
 .work__button,
 .projects__button,
-.blog__button {
+.blog__button,
+.dialog__cancel-button {
   display: flex;
   align-items: center;
   border: none;
@@ -245,7 +247,9 @@ li {
 .hero__button:hover,
 .work__button:hover,
 .projects__button:hover,
-.blog__button:hover {
+.blog__button:hover,
+.dialog__close-button:hover,
+.dialog__cancel-button:hover {
   cursor: pointer;
 }
 
@@ -343,19 +347,25 @@ li {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 2rem;
-  background-color: var(--color-surface);
-  color: var(--color-foreground);
   border: none;
-  border-radius: 1rem;
+  max-width: 350px;
+  z-index: 9999;
+  padding: 1rem;
+  background: none;
+  width: 100%;
+}
+
+.dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(1rem);
 }
 
 .dialog__close-button {
   border: none;
   background: none;
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  top: 2rem;
+  right: 2rem;
   aspect-ratio: 1 / 1;
   display: flex;
   justify-content: center;
@@ -367,6 +377,17 @@ li {
 .dialog__icon {
   color: var(--color-foreground);
   font-size: 1.5rem;
+}
+
+.dialog__nav {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-surface);
+  color: var(--color-foreground);
+  border-radius: 1rem;
 }
 
 .dialog__list {
@@ -384,9 +405,92 @@ li {
   padding: 0.25rem;
 }
 
-.dialog::backdrop {
-  background-color: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(1rem);
+.dialog__form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: var(--color-surface);
+  color: var(--color-foreground);
+  border-radius: 1rem;
+}
+
+.dialog__header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.dialog__description {
+  text-align: center;
+}
+
+.dialog__form-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.dialog__form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.dialog__form-label {
+  color: var(--color-foreground);
+  font-size: 16px;
+}
+
+.dialog__input-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.dialog__input-icon {
+  position: absolute;
+  left: 1rem;
+  z-index: 2;
+  font-size: 16px;
+}
+
+.dialog__input {
+  width: 100%;
+  border: 0;
+  border-radius: 0.5rem;
+  background-color: var(--color-subsurface);
+  font-size: 16px;
+  color: var(--color-subforeground);
+  padding-block: 0.5rem;
+  padding-left: 3.25rem;
+  padding-right: 1rem;
+}
+
+.dialog__button-group {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.dialog__confirm-button {
+  display: flex;
+  align-items: center;
+  border: none;
+  justify-content: center;
+  background-color: var(--color-primary);
+  color: var(--color-foreground);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.dialog__confirm-button:hover {
+  cursor: pointer;
 }
 
 @media only screen and (min-width: 480px) {

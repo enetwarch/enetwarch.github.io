@@ -4,13 +4,16 @@ const selectors = Object.freeze({
   techStackIcon: ".tech-stack__icon",
   techStackLabel: ".tech-stack__label",
   dialogCloseButton: ".dialog__close-button",
+  dialogCancelButton: ".dialog__cancel-button",
   dialogLink: ".dialog__link",
 });
 
 window.addEventListener("DOMContentLoaded", () => {
   addTechStack("tech-stack-list", "tech-stack-template", stack);
   addBlogPosts("blog-posts-list", "blog-posts-template");
+
   linkDialog("hamburger-dialog", "hamburger-button");
+  linkDialog("subscribe-dialog", "subscribe-button");
 });
 
 function addTechStack(techStackListId, techStackTemplateId, stackData) {
@@ -38,10 +41,12 @@ function linkDialog(dialogId, openButtonId) {
   const dialog = document.getElementById(dialogId);
   const openButton = document.getElementById(openButtonId);
   const closeButton = dialog.querySelector(selectors.dialogCloseButton);
+  const cancelButton = dialog.querySelector(selectors.dialogCancelButton);
   const dialogLinks = dialog.querySelectorAll(selectors.dialogLink);
 
   openButton.addEventListener("click", () => dialog.showModal());
   closeButton?.addEventListener("click", () => dialog.close());
+  cancelButton?.addEventListener("click", () => dialog.close());
   dialog.addEventListener("cancel", () => dialog.close());
   dialog.addEventListener("click", (event) => {
     if (event.target == dialog) dialog.close();
