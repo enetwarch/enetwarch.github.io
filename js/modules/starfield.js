@@ -2,13 +2,8 @@ export function addStarfieldCanvas(starfieldCanvasId, numberOfStars) {
   const canvas = document.getElementById(starfieldCanvasId);
   const canvasContext = canvas.getContext("2d");
 
-  let width, height;
-  const resize = () => {
-    width = canvas.width = window.innerWidth;
-    height = canvas.height = window.innerHeight;
-  };
-  window.addEventListener("resize", resize);
-  resize();
+  let width = window.innerWidth;
+  let height = window.innerHeight;
 
   const stars = [];
   for (let i = 0; i < numberOfStars; i++) {
@@ -46,4 +41,22 @@ export function addStarfieldCanvas(starfieldCanvasId, numberOfStars) {
     requestAnimationFrame(draw);
   };
   draw();
+
+  const resize = () => {
+    const newWidth = window.innerWidth;
+    const newHeight = window.innerHeight;
+
+    const xRatio = newWidth / width;
+    const yRatio = newHeight / height;
+
+    stars.forEach((star) => {
+      star.xCoordinates *= xRatio;
+      star.yCoordinates *= yRatio;
+    });
+
+    width = canvas.width = newWidth;
+    height = canvas.height = newHeight;
+  };
+  window.addEventListener("resize", resize);
+  resize();
 }
