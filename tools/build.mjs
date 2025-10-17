@@ -2,39 +2,43 @@ import fs from "fs";
 import path from "path";
 import { marked } from "marked";
 
-const directory = { blog: "blog", output: "src", data: "src/data" };
-const template = fs.readFileSync("./tools/template.html", "utf-8");
+const directory = { blog: "blog", output: "src", data: path.join("src", "data") };
+const template = fs.readFileSync(path.join("tools", "template.html"), "utf-8");
 
 if (!fs.existsSync(directory.blog)) {
   fs.mkdirSync(directory.output, { recursive: true });
 }
 
 const blogsData = [];
-fs.readdirSync(directory.blog)
-  .filter((filename) => filename.endsWith(".md"))
-  .forEach((filename) => {
-    const input = path.join(directory.blog, filename);
-    const markdown = fs.readFileSync(input, "utf-8");
-    const content = marked(markdown);
+fs.readdirSync(directory.blog).forEach((blob) => {
+    const date = blob;
 
-    const title = content.match(/<h1>(.*?)<\/h1>/)[1] || "Untitled";
-    const date = content.match(/Date:\s*(\d{4}-\d{2}-\d{2})/);
-    const description = ((max = 100) => {
-      if (!content) return "No description provided";
+    fs.readdirSync(path.join(directory.blog, blob)).forEach((filename) => {
+      const input = path.join(directory.blog, date, filename);
+      const output = filename.replace(".md", ".html");
 
-      const paragraphs = [...content.matchAll(/<p>(.*?)<\/p>/g)];
-      const descriptions = paragraphs.map((regex) => regex[1]);
+      const markdown = fs.readFileSync(input, "utf-8");
+      const content = marked(markdown);
 
-      return `${descriptions.join("... ").slice(0, max)}...`;
-    })();
+      const title = content.match(/<h1>(.*?)<\/h1>/)[1] || "Untitled";
+      const description = ((max = 100) => {
+        if (!content) return "No description provided";
 
-    const href = `./${filename.replace(".md", "")}`;
-    blogsData.push({ title, date, description, href });
+        const paragraphs = [...content.matchAll(/<p>(.*?)<\/p>/g)];
+        const descriptions = paragraphs.map((regex) => regex[1].replace(/<[^>]+>/g, ""));
 
-    const html = template.replace(/{{title}}/g, `Enetwarch Blog | ${title}`).replace(/{{content}}/g, content);
+        return `${descriptions.filter((truthy) => truthy).join("... ").slice(0, max)}...`;
+      })();
 
-    const output = filename.replace(".md", ".html");
-    fs.writeFileSync(path.join(directory.output, output), html);
+      const href = `./${output.replace(".html", "")}`;
+      blogsData.push({ title, date, description, href });
+
+      const innerHtml = template
+        .replace(/{{title}}/g, `Enetwarch's Blog | ${title}`)
+        .replace(/{{content}}/g, content);
+
+      fs.writeFileSync(path.join(directory.output, output), innerHtml);
+    });
   });
 
 blogsData.sort((x, y) => new Date(y.date) - new Date(x.date));
