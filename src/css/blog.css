@@ -55,7 +55,10 @@
   color: var(--color-primary);
   text-decoration: underline;
   box-shadow: var(--inactive-ring);
-  transition: opacity var(--transition-delay), color var(--transition-delay), box-shadow var(--transition-delay);
+  transition:
+    opacity var(--transition-delay),
+    color var(--transition-delay),
+    box-shadow var(--transition-delay);
 }
 
 .article a:focus-visible {

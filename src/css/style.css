@@ -31,7 +31,7 @@
 }
 
 *:not(:focus-visible) {
-  box-shadow: var(--inactive-ring)
+  box-shadow: var(--inactive-ring);
 }
 
 body {
@@ -133,6 +133,17 @@ li {
   background-color: var(--color-background);
   color: var(--color-foreground);
   padding-block: 1rem;
+}
+
+.main > * {
+  z-index: 1;
+}
+
+.canvas {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background: none;
 }
 
 .hero,
@@ -251,7 +262,9 @@ li {
   font-weight: bold;
   font-size: 16px;
   box-shadow: var(--inactive-ring);
-  transition: var(--transition-delay) opacity, box-shadow var(--transition-delay) ease;
+  transition:
+    var(--transition-delay) opacity,
+    box-shadow var(--transition-delay) ease;
 }
 
 .hero__button:focus-visible,
@@ -560,7 +573,9 @@ li {
   font-weight: bold;
   font-size: 16px;
   box-shadow: var(--inactive-ring);
-  transition: var(--transition-delay) opacity, box-shadow var(--transition-delay) ease;
+  transition:
+    var(--transition-delay) opacity,
+    box-shadow var(--transition-delay) ease;
 }
 
 .dialog__confirm-button:focus-visible {
