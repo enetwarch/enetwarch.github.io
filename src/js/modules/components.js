@@ -1,6 +1,9 @@
 const selectors = Object.freeze({
   techStackIcon: ".tech-stack__icon",
   techStackLabel: ".tech-stack__label",
+  blogPostLink: ".blog-posts__link",
+  blogPostHeader: ".blog-posts__post-header",
+  blogPostDescription: ".blog-posts__post-description",
   dialogCloseButton: ".dialog__close-button",
   dialogCancelButton: ".dialog__cancel-button",
   dialogLink: ".dialog__link",
@@ -22,8 +25,12 @@ export function addBlogPosts(blogPostsListId, blogPostsTemplateId, blogs) {
   const blogPostList = document.getElementById(blogPostsListId);
   const blogPostTemplate = document.getElementById(blogPostsTemplateId);
 
-  for (let _ = 0; _ < 9; _++) {
-    blogPostList.appendChild(blogPostTemplate.content.cloneNode(true));
+  for (const { href, title, description } of blogs) {
+    const blog = blogPostTemplate.content.cloneNode(true);
+    blog.querySelector(selectors.blogPostLink).href = href;
+    blog.querySelector(selectors.blogPostHeader).innerText = title;
+    blog.querySelector(selectors.blogPostDescription).innerText = description;
+    blogPostList.appendChild(blog);
   }
 }
 
