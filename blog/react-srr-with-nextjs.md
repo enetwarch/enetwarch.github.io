@@ -1,7 +1,5 @@
 # React SSR with Next.js: Step-by-Step
 
-Feb 5, 2025
-
 ![React SSR with Next.js: Step-by-Step](https://cdn.prod.website-files.com/5e0f1144930a8bc8aace526c/67a31f37b0514c5d51481a4d_67a2f10a17af441bd9b67648-1738741827093.jpg)
 
 Learn how to implement server-side rendering with Next.js to enhance performance, SEO, and user experience in your React applications.
