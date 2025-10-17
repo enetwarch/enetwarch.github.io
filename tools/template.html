@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="./css/blog.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <link rel="icon" type="image/svg+xml" href="./img/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon-16x16.png" />
+    <link rel="icon" sizes="180x180" href="./img/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="./img/favicon.ico" />
+    <script src="https://kit.fontawesome.com/0541e3b46f.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__content">
+        <a class="header__brand">
+          <i class="header__icon header__icon--logo fa-solid fa-user" aria-hidden="true"></i>
+          <h1 class="header__heading">Enetwarch</h1>
+        </a>
+        <nav class="header__nav">
+          <ul class="header__list">
+            <li class="header__list-item">
+              <a class="header__link" href="#hero">About</a>
+            </li>
+            <li class="header__list-item">
+              <a class="header__link" href="#projects">Projects</a>
+            </li>
+            <li class="header__list-item">
+              <a class="header__link" href="#blog-posts">Blog</a>
+            </li>
+          </ul>
+        </nav>
+        <button id="hamburger-button" class="header__hamburger">
+          <i class="header__icon fa-solid fa-bars" aria-hidden="true"></i>
+        </button>
+      </div>
+    </header>
+    <main id="main" class="main">
+      <article class="article" aria-label="{{title}}">{{content}}</article>
+    </main>
+    <footer class="footer">
+      <div class="footer__content">
+        <ul class="footer__list">
+          <li class="footer__list-item">
+            <a class="footer__link" href="https://www.linkedin.com/in/yugomolina/" target="_blank" rel="noreferrer">
+              <i class="footer__icon fa-brands fa-linkedin" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li class="footer__list-item">
+            <a class="footer__link" href="https://github.com/enetwarch" target="_blank" rel="noreferrer">
+              <i class="footer__icon fa-brands fa-github" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li class="footer__list-item">
+            <a class="footer__link" href="mailto:enetwarch@protonmail.com">
+              <i class="footer__icon fa-solid fa-envelope" aria-hidden="true"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>

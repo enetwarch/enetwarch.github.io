@@ -6,6 +6,10 @@ settings:
 
 importers:
   .:
+    dependencies:
+      marked:
+        specifier: ^16.4.1
+        version: 16.4.1
     devDependencies:
       "@eslint/js":
         specifier: ^9.30.1
@@ -351,6 +355,12 @@ packages:
   lodash.merge@4.6.2:
     resolution:
       { integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ== }
+
+  marked@16.4.1:
+    resolution:
+      { integrity: sha512-ntROs7RaN3EvWfy3EZi14H4YxmT6A5YvywfhO+0pm+cH/dnSQRmdAmoFIc3B9aiwTehyk7pESH4ofyBY+V5hZg== }
+    engines: { node: ">= 20" }
+    hasBin: true
 
   minimatch@3.1.2:
     resolution:
@@ -719,6 +729,8 @@ snapshots:
       p-locate: 5.0.0
 
   lodash.merge@4.6.2: {}
+
+  marked@16.4.1: {}
 
   minimatch@3.1.2:
     dependencies:
