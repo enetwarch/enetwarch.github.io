@@ -55,8 +55,14 @@
               </p>
             </div>
             <div class="hero__button-group">
-              <button id="resume-button" class="hero__button">Resume</button>
-              <button id="subscribe-button" class="hero__button">Subscribe</button>
+              <a
+                class="hero__button"
+                href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                target="_blank"
+                rel="noreferrer"
+                >Resume</a
+              >
+              <button id="subscribe-button1" class="hero__button">Subscribe</button>
             </div>
           </div>
         </div>
@@ -75,8 +81,10 @@
               </p>
             </div>
             <div class="work__button-group">
-              <button class="work__button">LinkedIn</button>
-              <button class="work__button">GitHub</button>
+              <a class="work__button" href="https://www.linkedin.com/in/yugomolina/" target="_blank" rel="noreferrer"
+                >LinkedIn</a
+              >
+              <a class="work__button" href="https://github.com/enetwarch" target="_blank" rel="noreferrer">GitHub</a>
             </div>
           </div>
         </div>
@@ -111,7 +119,13 @@
               </p>
             </div>
             <div class="projects__button-group">
-              <button class="projects__button">Repositories</button>
+              <a
+                class="projects__button"
+                href="https://github.com/enetwarch?tab=repositories"
+                target="_blank"
+                rel="noreferrer"
+                >Repositories</a
+              >
             </div>
           </div>
         </div>
@@ -131,7 +145,7 @@
               </p>
             </div>
             <div class="blog__button-group">
-              <button class="blog__button">Subscribe</button>
+              <button id="subscribe-button2" class="blog__button">Subscribe</button>
             </div>
           </div>
         </div>
@@ -159,17 +173,17 @@
       <div class="footer__content">
         <ul class="footer__list">
           <li class="footer__list-item">
-            <a class="footer__link" href="">
+            <a class="footer__link" href="https://www.linkedin.com/in/yugomolina/" target="_blank" rel="noreferrer">
               <i class="footer__icon fa-brands fa-linkedin" aria-hidden="true"></i>
             </a>
           </li>
           <li class="footer__list-item">
-            <a class="footer__link" href="">
+            <a class="footer__link" href="https://github.com/enetwarch" target="_blank" rel="noreferrer">
               <i class="footer__icon fa-brands fa-github" aria-hidden="true"></i>
             </a>
           </li>
           <li class="footer__list-item">
-            <a class="footer__link" href="">
+            <a class="footer__link" href="mailto:enetwarch@protonmail.com">
               <i class="footer__icon fa-solid fa-envelope" aria-hidden="true"></i>
             </a>
           </li>
@@ -191,7 +205,7 @@
         </ul>
       </nav>
     </dialog>
-    <dialog id="subscribe-dialog" class="dialog">
+    <dialog id="subscribe-dialog" class="dialog dialog--full">
       <button class="dialog__close-button">
         <i class="dialog__icon dialog__icon--close fa-solid fa-xmark" aria-hidden="true"></i>
       </button>
@@ -205,7 +219,14 @@
             <label class="dialog__form-label" for="email">Email Address</label>
             <div class="dialog__input-container">
               <i class="dialog__input-icon fa-solid fa-envelope" aria-hidden="true"></i>
-              <input id="email" class="dialog__input" type="email" placeholder="johndoe@gmail.com" autocomplete="name" required />
+              <input
+                id="email"
+                class="dialog__input"
+                type="email"
+                placeholder="johndoe@gmail.com"
+                autocomplete="name"
+                required
+              />
             </div>
           </div>
           <div class="dialog__form-field">

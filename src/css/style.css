@@ -311,7 +311,7 @@ li {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
+  padding: 0.5rem;
   z-index: 5;
 }
 
@@ -325,7 +325,7 @@ li {
 .footer__list {
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  gap: 0.5rem;
 }
 
 .footer__link {
@@ -352,12 +352,15 @@ li {
   z-index: 9999;
   padding: 1rem;
   background: none;
-  width: 100%;
 }
 
 .dialog::backdrop {
   background-color: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(1rem);
+}
+
+.dialog--full {
+  width: 100%;
 }
 
 .dialog__close-button {
@@ -464,7 +467,7 @@ li {
   font-size: 16px;
   color: var(--color-subforeground);
   padding-block: 0.5rem;
-  padding-left: 3.25rem;
+  padding-left: 3rem;
   padding-right: 1rem;
 }
 

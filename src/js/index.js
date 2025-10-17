@@ -13,7 +13,8 @@ window.addEventListener("DOMContentLoaded", () => {
   addBlogPosts("blog-posts-list", "blog-posts-template");
 
   linkDialog("hamburger-dialog", "hamburger-button");
-  linkDialog("subscribe-dialog", "subscribe-button");
+  linkDialog("subscribe-dialog", "subscribe-button1");
+  linkDialog("subscribe-dialog", "subscribe-button2");
 });
 
 function addTechStack(techStackListId, techStackTemplateId, stackData) {
