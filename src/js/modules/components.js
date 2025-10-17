@@ -18,7 +18,7 @@ export function addTechStack(techStackListId, techStackTemplateId, stackData) {
   }
 }
 
-export function addBlogPosts(blogPostsListId, blogPostsTemplateId) {
+export function addBlogPosts(blogPostsListId, blogPostsTemplateId, blogs) {
   const blogPostList = document.getElementById(blogPostsListId);
   const blogPostTemplate = document.getElementById(blogPostsTemplateId);
 
