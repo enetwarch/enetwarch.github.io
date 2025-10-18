@@ -64,6 +64,15 @@ export function linkDialog(dialogId, openButtonId, showClass = "dialog--show") {
   }
 }
 
+export function addFormEvent(formId, onSubmit) {
+  const form = document.getElementById(formId);
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    onSubmit(new FormData(form));
+  });
+}
+
 export function insertDateElement(beforeElementQuery, unformattedDate) {
   const dateElement = document.createElement("p");
   dateElement.ariaLabel = "Date Published";
