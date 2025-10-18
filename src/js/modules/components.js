@@ -44,7 +44,7 @@ export function linkDialog(dialogId, openButtonId, showClass = "dialog--show") {
   const showModal = () => {
     dialog.showModal();
     requestAnimationFrame(() => dialog.classList.add(showClass));
-  }
+  };
 
   const closeModal = (event) => {
     event?.preventDefault();

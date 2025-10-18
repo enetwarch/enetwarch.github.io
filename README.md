@@ -24,4 +24,4 @@ enetwarch.github.io/ # repository
 
 ### Automation
 
-GitHub Actions is used for the CI/CD pipelines and deployment of the website through another branch. The script `pnpm build` runs tools from the [`tools/`](./tools/) directory and effectively converts all **Markdown** blog files to **HTML** files for static site generation. The final end product will effectively be **vanilla HTML, CSS, and JS** files with the help of automation tools from `Node.js` and other libraries. 
+GitHub Actions is used for the CI/CD pipelines and deployment of the website through another branch. The script `pnpm build` runs tools from the [`tools/`](./tools/) directory and effectively converts all **Markdown** blog files to **HTML** files for static site generation. The final end product will effectively be **vanilla HTML, CSS, and JS** files with the help of automation tools from `Node.js` and other libraries.
