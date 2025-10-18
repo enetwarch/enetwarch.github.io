@@ -46,7 +46,8 @@ export function linkDialog(dialogId, openButtonId, showClass = "dialog--show") {
     requestAnimationFrame(() => dialog.classList.add(showClass));
   };
 
-  const closeModal = () => {
+  const closeModal = (event) => {
+    event?.preventDefault();
     dialog.classList.remove(showClass);
     dialog.addEventListener("transitionend", () => dialog.close(), { once: true });
   };
